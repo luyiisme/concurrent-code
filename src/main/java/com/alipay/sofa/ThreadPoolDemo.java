@@ -11,14 +11,12 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ThreadPoolDemo {
 
     /**
-     * 线程池demo
+     * 线程池demo,规约2
      *
      * @param args
      */
     public static void main(String[] args) {
-
         ThreadFactory namedThreadFactory = getNamedThreadFactory();
-
 
         //通用线程池
         ExecutorService pool = new ThreadPoolExecutor(5, 200,
@@ -27,7 +25,6 @@ public class ThreadPoolDemo {
 
         pool.execute(()-> System.out.println(Thread.currentThread().getName()));
         pool.shutdown();//gracefully shutdown
-
 
         //======================================================================================================================================================
         //单一线程线程池 例子
@@ -44,22 +41,19 @@ public class ThreadPoolDemo {
 
     /**
      * 规约9
-     *
      * @return
      */
     private static ThreadFactory getNamedThreadFactory() {
         ThreadFactory namedThreadFactory;//使用guava包中工具类；
         namedThreadFactory = new ThreadFactoryBuilder()
                 .setNameFormat("demo-pool-%d").build();
-
         // 使用自定义线程工厂类
         // namedThreadFactory = new DefaultThreadFactory("demo-pool");
         return namedThreadFactory;
     }
 
-
     /**
-     * 自定义线程工厂
+     * 自定义线程工厂类
      */
     public static class DefaultThreadFactory implements ThreadFactory {
 
