@@ -36,7 +36,6 @@ public class ThreadPoolDemo {
 
         singleThreadPool.execute(()-> System.out.println(Thread.currentThread().getName()));
         singleThreadPool.shutdown();
-
     }
 
     /**
