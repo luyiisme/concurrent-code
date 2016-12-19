@@ -43,7 +43,9 @@ public class ThreadPoolDemo {
      * @return
      */
     private static ThreadFactory getNamedThreadFactory() {
-        ThreadFactory namedThreadFactory;//使用guava包中工具类；
+        ThreadFactory namedThreadFactory;
+
+        //使用guava包中工具类；
         namedThreadFactory = new ThreadFactoryBuilder()
                 .setNameFormat("demo-pool-%d").build();
         // 使用自定义线程工厂类
