@@ -18,12 +18,15 @@ public class E2_SubListDemo {
         List<String> blist = alist.subList(0, 2);
 
         //alist.remove("b");
-        // alist.add("x");
-        //alist.set(1,"x");
-        for (String e : blist) {
-            System.err.println(e);
-        }
+        alist.add("x");
+        //list.set(1,"x");
 
+
+       blist.get(0);
+//        System.out.println(blist.size());
+//        for (String e : blist) {
+//            System.err.println(e);
+//        }
 
     }
 }
