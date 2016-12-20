@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Created by kevin.luy@alipay.com on 2016/12/19.
  */
-public class ThreadPoolDemo {
+public class E4_ThreadPoolDemo {
 
     /**
      * 线程池demo,规约2

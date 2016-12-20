@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 /**
  * Created by kevin.luy@alipay.com on 2016/12/18.
  */
-public class ParellelStreamsDemo {
+public class E6_ParellelStreamsDemo {
     public static void main(String[] args) {
         List<Account> accounts = IntStream.range(1, 10000).mapToObj(i -> new Account(i)).collect(Collectors.toList());
 

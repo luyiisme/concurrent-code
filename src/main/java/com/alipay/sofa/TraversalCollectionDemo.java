@@ -18,7 +18,7 @@ public class TraversalCollectionDemo {
                 }
             }
         } catch (Throwable e) {
-            System.err.println(e);
+            e.printStackTrace();
         }
 
         try {
@@ -30,11 +30,11 @@ public class TraversalCollectionDemo {
             }
             System.out.println("remove successful,linkedList.Size:" + linkedList.size());
         } catch (Throwable e2) {
-            System.err.println(e2);
+            e2.printStackTrace();
         }
 
         try {
-            List<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c","d"));
+            List<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c", "d"));
             for (String e : list) {
                 if (e.equals("a")) {//only "c"倒数第二个,ok
                     list.remove(e);
@@ -42,7 +42,7 @@ public class TraversalCollectionDemo {
             }
             System.out.println("remove successful,arrayList.Size:" + list.size());
         } catch (Throwable e3) {
-            System.err.println(e3);
+            e3.printStackTrace();
         }
 
     }

@@ -5,7 +5,7 @@ import java.io.IOException;
 /**
  * Created by kevin.luy@alipay.com on 2016/12/15.
  */
-public class Main {
+public class ThreadNameDemo {
 
     volatile int a;
 
