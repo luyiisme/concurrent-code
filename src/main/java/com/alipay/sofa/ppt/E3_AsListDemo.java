@@ -13,13 +13,10 @@ public class E3_AsListDemo {
         String[] strings = new String[]{"1", "2", "3"};
 
         List<String> asList = Arrays.asList(strings);
-        //       asList.remove(0);
-        //       asList.set(1, "a");
-        //       asList.add("4");
+        // asList.remove(0);
+        // asList.clear();
 
-
-//        for (String e : strings) {
-//            System.out.println(e);
-//        }
+        asList.set(1, "a");
+        // asList.add("4");
     }
 }

@@ -16,7 +16,7 @@ public class E5_TimerDemo {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                if (i > 2) {
+                if (i > 1) {
                     throw new RuntimeException("XXX");
                 }
                 System.out.println("aaaa");

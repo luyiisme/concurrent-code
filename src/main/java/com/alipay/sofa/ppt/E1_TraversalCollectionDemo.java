@@ -10,17 +10,16 @@ import java.util.List;
 public class E1_TraversalCollectionDemo {
 
     public static void main(String[] args) {
-
+        List<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c", "d"));
         try {
-            List<String> list = new ArrayList<String>(Arrays.asList("a", "b", "c", "d"));
             for (String e : list) {
-                if (e.equals("d")) {
+                if (e.equals("a")) {
                     list.remove(e);
                 }
             }
             System.out.println("remove successful,arrayList.Size:" + list.size());
-        } catch (Throwable e3) {
-            e3.printStackTrace();
+        } catch (Throwable e) {
+            e.printStackTrace();
         }
     }
 }

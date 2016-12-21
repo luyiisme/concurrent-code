@@ -9,15 +9,15 @@ import java.util.stream.IntStream;
  */
 public class E6_ParellelStreamsDemo {
     public static void main(String[] args) {
-        List<Account> accounts = IntStream.range(1, 10000).mapToObj(i -> new Account(i)).collect(Collectors.toList());
+        List<Account> accounts = IntStream.range(1, 5000000).mapToObj(i -> new Account(i)).collect(Collectors.toList());
 
         long startTime = System.nanoTime();
         long num = accounts.stream().map(x -> x.getBalance()).filter(b -> b == 0).count();
-        System.out.println(num + " cost:" + (System.nanoTime() - startTime));
+        System.out.println(num + " seq cost:" + (System.nanoTime() - startTime));
 
         startTime = System.nanoTime();
         num = accounts.parallelStream().map(x -> x.getBalance()).filter(b -> b == 0).count();
-        System.out.println(num + " cost:" + (System.nanoTime() - startTime));
+        System.out.println(num + " par cost:" + (System.nanoTime() - startTime));
     }
 
 

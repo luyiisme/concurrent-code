@@ -1,6 +1,7 @@
 package com.alipay.sofa;
 
 import com.google.common.util.concurrent.ThreadFactoryBuilder;
+import org.apache.commons.lang3.concurrent.BasicThreadFactory;
 
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -23,7 +24,7 @@ public class E4_ThreadPoolDemo {
                 0L, TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue<Runnable>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
 
-        pool.execute(()-> System.out.println(Thread.currentThread().getName()));
+        pool.execute(() -> System.out.println(Thread.currentThread().getName()));
         pool.shutdown();//gracefully shutdown
 
         //======================================================================================================================================================
@@ -34,20 +35,24 @@ public class E4_ThreadPoolDemo {
                 new LinkedBlockingQueue<Runnable>(1024), new DefaultThreadFactory("single-thread-pool-demo"), new ThreadPoolExecutor.AbortPolicy());
 
 
-        singleThreadPool.execute(()-> System.out.println(Thread.currentThread().getName()));
+        singleThreadPool.execute(() -> System.out.println(Thread.currentThread().getName()));
         singleThreadPool.shutdown();
     }
 
     /**
      * 规约9
+     *
      * @return
      */
     private static ThreadFactory getNamedThreadFactory() {
         ThreadFactory namedThreadFactory;
 
         //使用guava包中工具类；
-        namedThreadFactory = new ThreadFactoryBuilder()
-                .setNameFormat("demo-pool-%d").build();
+        namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("demo-pool-%d").build();
+
+
+        //namedThreadFactory = new BasicThreadFactory.Builder().namingPattern("demo-pool-%d").build();
+
         // 使用自定义线程工厂类
         // namedThreadFactory = new DefaultThreadFactory("demo-pool");
         return namedThreadFactory;

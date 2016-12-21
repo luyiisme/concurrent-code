@@ -22,8 +22,8 @@ public class ThreadExceptionDemo {
         executor.execute(new Runnable() {
             @Override
             public void run() {
-                System.out.println(Thread.currentThread().getName());
                 System.out.print(1/0);
+                System.out.println(Thread.currentThread().getName());
             }
         });
         executor.execute(new Runnable() {

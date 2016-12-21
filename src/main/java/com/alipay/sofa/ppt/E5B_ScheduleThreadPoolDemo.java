@@ -17,7 +17,7 @@ public class E5B_ScheduleThreadPoolDemo {
 
         ScheduledExecutorService pool = new ScheduledThreadPoolExecutor(1, namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
         ScheduledFuture future = pool.scheduleAtFixedRate(() -> {
-            if (i > 2) {
+            if (i > 1) {
                 throw new RuntimeException("XXX");
             }
             System.out.println("aaaa");
@@ -31,6 +31,9 @@ public class E5B_ScheduleThreadPoolDemo {
         } catch (ExecutionException e) {
             e.getCause().printStackTrace();
         }
-        pool.shutdownNow();
+
+        Thread.sleep(8000l);
+
+        pool.shutdown();
     }
 }
