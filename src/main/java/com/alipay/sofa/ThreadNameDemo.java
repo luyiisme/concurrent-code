@@ -11,18 +11,16 @@ public class ThreadNameDemo {
 
     public static void main(String[] args) throws IOException {
 
-        new Thread("demo");
 
-        new Thread(()->{
 
-            try{
-
-            }finally {
-
-            }
+        Thread t = new Thread(() -> {
+            //do something...
         });
 
 
+        new Thread(() -> {
+            //do something...
+        }, "demo");
 
 
         Thread t2 = new Thread();
@@ -33,5 +31,6 @@ public class ThreadNameDemo {
 
         Thread.currentThread().setName("demo3");
         System.out.println(Thread.currentThread().getName());
+
     }
 }

@@ -32,7 +32,7 @@ public class E5_TimerDemo {
         }, 200l, 2000l);
 
         try {
-            Thread.sleep(10000l);
+            Thread.sleep(60000l);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

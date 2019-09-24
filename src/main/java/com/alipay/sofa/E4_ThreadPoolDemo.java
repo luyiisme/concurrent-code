@@ -25,7 +25,8 @@ public class E4_ThreadPoolDemo {
                 new LinkedBlockingQueue<Runnable>(1024), namedThreadFactory, new ThreadPoolExecutor.AbortPolicy());
 
         pool.execute(() -> System.out.println(Thread.currentThread().getName()));
-        pool.shutdown();//gracefully shutdown
+        //gracefully shutdown
+        pool.shutdown();
 
         //======================================================================================================================================================
         //单一线程线程池 例子
@@ -50,7 +51,7 @@ public class E4_ThreadPoolDemo {
         //使用guava包中工具类；
         namedThreadFactory = new ThreadFactoryBuilder().setNameFormat("demo-pool-%d").build();
 
-
+        //commons-lang:v3
         //namedThreadFactory = new BasicThreadFactory.Builder().namingPattern("demo-pool-%d").build();
 
         // 使用自定义线程工厂类
